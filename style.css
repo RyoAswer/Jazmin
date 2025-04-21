@@ -1,0 +1,145 @@
+/* Estilos generales */
+body {
+    background-color: black;
+    margin: 0;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    overflow: hidden;
+}
+
+#scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+}
+
+#wolfchan-container {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: right 1s ease;
+}
+
+.speech-bubble {
+    background: #fff;
+    color: #000;
+    padding: 12px 18px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    max-width: 300px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.wolfchan-wrapper {
+    position: relative;
+}
+
+#wolfchan {
+    width: 180px;
+    z-index: 2;
+}
+
+#lightstick {
+    position: absolute;
+    width: 175px;
+    right: -120px;
+    bottom: 90px;
+    display: none;
+    z-index: 1;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive;
+    position: relative; /* Se agrega para que los botones se muevan dentro de este contenedor */
+    width: 300px;
+}
+
+.modal-question {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+#yesBtn, #noBtn, #backBtn {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    background-color: red; /* Botones rojos */
+    color: white; /* Texto blanco */
+}
+
+#sadMessage {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.hidden {
+    display: none;
+}
+
+#yesBtn.moving {
+    position: absolute; /* Mueve el botón dentro del contenedor */
+}
+
+.menu-boton, .volver-boton {
+    margin: 20px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: crimson;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.menu-boton:hover,
+  .volver-boton:hover {
+    transform: scale(1.05);
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+  
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .fade-in {
+      grid-template-columns: repeat(1, 1fr); /* 1 columna en pantallas pequeñas */
+    }
+}
+  
